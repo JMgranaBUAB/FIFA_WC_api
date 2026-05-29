@@ -21,10 +21,7 @@ npm run dev
 npm run build
 ```
 
-## Servidor local con proxy
-```bash
-node server.cjs
-```
+## Despliegue en Vercel
+En Vercel, define la variable de entorno `FOOTBALL_API_KEY` (o `API_KEY`) con la clave de Football Data.
 
-La app se sirve en http://localhost:8000/ y el endpoint `/api/wc-matches` proxy a la API de Football Data usando la clave guardada en `.env`.
-# FIFA_WC_api
+La app usa `/api/wc-matches` como endpoint. En desarrollo local, Vite proxyá esa ruta a la API; en Vercel, la ruta la resuelve la función serverless incluida en `api/`.
